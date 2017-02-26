@@ -1,0 +1,276 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 51.37      2.48     2.48   119900     0.02     0.02  get_data_at(LLIST*, unsigned int)
+ 20.30      3.46     0.98   124940     0.01     0.01  find_data(LLIST*, void*)
+ 13.46      4.11     0.65 313015128     0.00     0.00  compare_vertex(void*, void*)
+  4.56      4.33     0.22     8816     0.02     0.02  add_path(vertex*, vertex*, GRAPH*, int)
+  2.69      4.46     0.13        1   130.06   130.06  create_graph_gps()
+  2.28      4.57     0.11        1   110.05   110.05  initialize_Dijkstra(GRAPH*, int)
+  2.07      4.67     0.10    64929     0.00     0.00  add_node_at(LLIST*, unsigned int, void*)
+  1.66      4.75     0.08    59970     0.00     0.00  find_data2(LLIST*, void*)
+  1.45      4.82     0.07     5000     0.01     0.01  check_dijkstra_state(GRAPH*)
+  0.21      4.83     0.01    25067     0.00     0.00  _reheapDown(HEAP*, int)
+  0.00      4.83     0.00   684790     0.00     0.00  arc_compare(void*, void*)
+  0.00      4.83     0.00    59970     0.00     0.07  g_insert_arc(GRAPH*, int, int, int)
+  0.00      4.83     0.00    30000     0.00     0.14  insert_arc(GRAPH*, int, int, int)
+  0.00      4.83     0.00    29959     0.00     0.00  heapInsert(HEAP*, void*)
+  0.00      4.83     0.00    29958     0.00     0.00  _reheapUp(HEAP*, int)
+  0.00      4.83     0.00    25067     0.00     0.00  heapDelete(HEAP*, void**)
+  0.00      4.83     0.00     5001     0.00     0.00  create_list(int (*)(void*, void*), void (*)(void*))
+  0.00      4.83     0.00     5000     0.00     0.01  g_insert_vertex_gps(GRAPH*, int, float, float)
+  0.00      4.83     0.00        1     0.00     0.00  find_data3(LLIST*, void*)
+  0.00      4.83     0.00        1     0.00     0.00  heapCreate(int, int (*)(void*, void*))
+  0.00      4.83     0.00        1     0.00   410.22  find_shortest_way(GRAPH*, int, int, char**)
+  0.00      4.83     0.00        1     0.00   410.22  find_shortest_way_all(GRAPH*, int)
+  0.00      4.83     0.00        1     0.00   410.22  g_generate_shortest_path(GRAPH*, int, int, char**)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.21% of 4.83 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    4.83                 main [1]
+                0.00    4.22   30000/30000       insert_arc(GRAPH*, int, int, int) [3]
+                0.00    0.41       1/1           g_generate_shortest_path(GRAPH*, int, int, char**) [9]
+                0.13    0.00       1/1           create_graph_gps() [11]
+                0.00    0.07    5000/5000        g_insert_vertex_gps(GRAPH*, int, float, float) [15]
+-----------------------------------------------
+                0.00    4.22   59970/59970       insert_arc(GRAPH*, int, int, int) [3]
+[2]     87.3    0.00    4.22   59970         g_insert_arc(GRAPH*, int, int, int) [2]
+                2.48    0.00  119899/119900      get_data_at(LLIST*, unsigned int) [4]
+                0.94    0.62  119940/124940      find_data(LLIST*, void*) [5]
+                0.09    0.00   59929/64929       add_node_at(LLIST*, unsigned int, void*) [13]
+                0.08    0.00   59970/59970       find_data2(LLIST*, void*) [14]
+-----------------------------------------------
+                0.00    4.22   30000/30000       main [1]
+[3]     87.3    0.00    4.22   30000         insert_arc(GRAPH*, int, int, int) [3]
+                0.00    4.22   59970/59970       g_insert_arc(GRAPH*, int, int, int) [2]
+-----------------------------------------------
+                0.00    0.00       1/119900      find_shortest_way_all(GRAPH*, int) [8]
+                2.48    0.00  119899/119900      g_insert_arc(GRAPH*, int, int, int) [2]
+[4]     51.3    2.48    0.00  119900         get_data_at(LLIST*, unsigned int) [4]
+-----------------------------------------------
+                0.04    0.03    5000/124940      g_insert_vertex_gps(GRAPH*, int, float, float) [15]
+                0.94    0.62  119940/124940      g_insert_arc(GRAPH*, int, int, int) [2]
+[5]     33.7    0.98    0.65  124940         find_data(LLIST*, void*) [5]
+                0.65    0.00 313015128/313015128     compare_vertex(void*, void*) [6]
+-----------------------------------------------
+                0.65    0.00 313015128/313015128     find_data(LLIST*, void*) [5]
+[6]     13.5    0.65    0.00 313015128         compare_vertex(void*, void*) [6]
+-----------------------------------------------
+                0.00    0.41       1/1           g_generate_shortest_path(GRAPH*, int, int, char**) [9]
+[7]      8.5    0.00    0.41       1         find_shortest_way(GRAPH*, int, int, char**) [7]
+                0.00    0.41       1/1           find_shortest_way_all(GRAPH*, int) [8]
+-----------------------------------------------
+                0.00    0.41       1/1           find_shortest_way(GRAPH*, int, int, char**) [7]
+[8]      8.5    0.00    0.41       1         find_shortest_way_all(GRAPH*, int) [8]
+                0.22    0.00    8816/8816        add_path(vertex*, vertex*, GRAPH*, int) [10]
+                0.11    0.00       1/1           initialize_Dijkstra(GRAPH*, int) [12]
+                0.07    0.00    5000/5000        check_dijkstra_state(GRAPH*) [16]
+                0.00    0.01   25067/25067       heapDelete(HEAP*, void**) [17]
+                0.00    0.00       1/119900      get_data_at(LLIST*, unsigned int) [4]
+                0.00    0.00   29959/29959       heapInsert(HEAP*, void*) [26]
+                0.00    0.00       1/1           find_data3(LLIST*, void*) [29]
+                0.00    0.00       1/1           heapCreate(int, int (*)(void*, void*)) [30]
+-----------------------------------------------
+                0.00    0.41       1/1           main [1]
+[9]      8.5    0.00    0.41       1         g_generate_shortest_path(GRAPH*, int, int, char**) [9]
+                0.00    0.41       1/1           find_shortest_way(GRAPH*, int, int, char**) [7]
+-----------------------------------------------
+                0.22    0.00    8816/8816        find_shortest_way_all(GRAPH*, int) [8]
+[10]     4.6    0.22    0.00    8816         add_path(vertex*, vertex*, GRAPH*, int) [10]
+-----------------------------------------------
+                0.13    0.00       1/1           main [1]
+[11]     2.7    0.13    0.00       1         create_graph_gps() [11]
+                0.00    0.00       1/5001        create_list(int (*)(void*, void*), void (*)(void*)) [28]
+-----------------------------------------------
+                0.11    0.00       1/1           find_shortest_way_all(GRAPH*, int) [8]
+[12]     2.3    0.11    0.00       1         initialize_Dijkstra(GRAPH*, int) [12]
+-----------------------------------------------
+                0.01    0.00    5000/64929       g_insert_vertex_gps(GRAPH*, int, float, float) [15]
+                0.09    0.00   59929/64929       g_insert_arc(GRAPH*, int, int, int) [2]
+[13]     2.1    0.10    0.00   64929         add_node_at(LLIST*, unsigned int, void*) [13]
+-----------------------------------------------
+                0.08    0.00   59970/59970       g_insert_arc(GRAPH*, int, int, int) [2]
+[14]     1.7    0.08    0.00   59970         find_data2(LLIST*, void*) [14]
+-----------------------------------------------
+                0.00    0.07    5000/5000        main [1]
+[15]     1.5    0.00    0.07    5000         g_insert_vertex_gps(GRAPH*, int, float, float) [15]
+                0.04    0.03    5000/124940      find_data(LLIST*, void*) [5]
+                0.01    0.00    5000/64929       add_node_at(LLIST*, unsigned int, void*) [13]
+                0.00    0.00    5000/5001        create_list(int (*)(void*, void*), void (*)(void*)) [28]
+-----------------------------------------------
+                0.07    0.00    5000/5000        find_shortest_way_all(GRAPH*, int) [8]
+[16]     1.4    0.07    0.00    5000         check_dijkstra_state(GRAPH*) [16]
+-----------------------------------------------
+                0.00    0.01   25067/25067       find_shortest_way_all(GRAPH*, int) [8]
+[17]     0.2    0.00    0.01   25067         heapDelete(HEAP*, void**) [17]
+                0.01    0.00   25067/25067       _reheapDown(HEAP*, int) [18]
+-----------------------------------------------
+                              313627             _reheapDown(HEAP*, int) [18]
+                0.01    0.00   25067/25067       heapDelete(HEAP*, void**) [17]
+[18]     0.2    0.01    0.00   25067+313627  _reheapDown(HEAP*, int) [18]
+                0.00    0.00  635413/684790      arc_compare(void*, void*) [25]
+                              313627             _reheapDown(HEAP*, int) [18]
+-----------------------------------------------
+                0.00    0.00   49377/684790      _reheapUp(HEAP*, int) [27]
+                0.00    0.00  635413/684790      _reheapDown(HEAP*, int) [18]
+[25]     0.0    0.00    0.00  684790         arc_compare(void*, void*) [25]
+-----------------------------------------------
+                0.00    0.00   29959/29959       find_shortest_way_all(GRAPH*, int) [8]
+[26]     0.0    0.00    0.00   29959         heapInsert(HEAP*, void*) [26]
+                0.00    0.00   29958/29958       _reheapUp(HEAP*, int) [27]
+-----------------------------------------------
+                               19422             _reheapUp(HEAP*, int) [27]
+                0.00    0.00   29958/29958       heapInsert(HEAP*, void*) [26]
+[27]     0.0    0.00    0.00   29958+19422   _reheapUp(HEAP*, int) [27]
+                0.00    0.00   49377/684790      arc_compare(void*, void*) [25]
+                               19422             _reheapUp(HEAP*, int) [27]
+-----------------------------------------------
+                0.00    0.00       1/5001        create_graph_gps() [11]
+                0.00    0.00    5000/5001        g_insert_vertex_gps(GRAPH*, int, float, float) [15]
+[28]     0.0    0.00    0.00    5001         create_list(int (*)(void*, void*), void (*)(void*)) [28]
+-----------------------------------------------
+                0.00    0.00       1/1           find_shortest_way_all(GRAPH*, int) [8]
+[29]     0.0    0.00    0.00       1         find_data3(LLIST*, void*) [29]
+-----------------------------------------------
+                0.00    0.00       1/1           find_shortest_way_all(GRAPH*, int) [8]
+[30]     0.0    0.00    0.00       1         heapCreate(int, int (*)(void*, void*)) [30]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [14] find_data2(LLIST*, void*) [28] create_list(int (*)(void*, void*), void (*)(void*)) [16] check_dijkstra_state(GRAPH*)
+  [29] find_data3(LLIST*, void*) [4] get_data_at(LLIST*, unsigned int) [8] find_shortest_way_all(GRAPH*, int)
+  [30] heapCreate(int, int (*)(void*, void*)) [2] g_insert_arc(GRAPH*, int, int, int) [9] g_generate_shortest_path(GRAPH*, int, int, char**)
+  [17] heapDelete(HEAP*, void**) [6] compare_vertex(void*, void*) [10] add_path(vertex*, vertex*, GRAPH*, int)
+  [26] heapInsert(HEAP*, void*) [11] create_graph_gps()    [5] find_data(LLIST*, void*)
+   [3] insert_arc(GRAPH*, int, int, int) [7] find_shortest_way(GRAPH*, int, int, char**) [18] _reheapDown(HEAP*, int) (ADT_heap.c)
+  [13] add_node_at(LLIST*, unsigned int, void*) [15] g_insert_vertex_gps(GRAPH*, int, float, float) [27] _reheapUp(HEAP*, int) (ADT_heap.c)
+  [25] arc_compare(void*, void*) [12] initialize_Dijkstra(GRAPH*, int)

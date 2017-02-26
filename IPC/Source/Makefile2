@@ -1,0 +1,39 @@
+help:
+	@echo "make help"
+	@echo "make all"
+
+ADT_graph.o: ADT_graph.c
+	g++ -c ADT_graph.c -lm
+
+ADT_llist.o: ADT_llist.c
+	g++ -c ADT_llist.c
+
+ADT_queue.o: ADT_queue.c
+	g++ -c ADT_queue.c
+
+ADT_stack.o: ADT_stack.c
+	g++ -c ADT_stack.c
+
+ADT_heap.o: ADT_heap.c
+	g++ -c ADT_heap.c
+
+ADT_Dijkstra.o: ADT_Dijkstra.c
+	g++ -c ADT_Dijkstra.c
+
+ADT_create_Map.o: ADT_create_Map.c
+	g++ -c ADT_create_Map.c
+
+main.o: main.c
+	g++ -c main.c
+
+all: ADT_graph.o ADT_llist.o ADT_queue.o ADT_stack.o ADT_heap.o ADT_Dijkstra.o ADT_create_Map.o main.o
+	g++ -g -pg -o path main.o ADT_graph.o ADT_llist.o ADT_queue.o ADT_stack.o ADT_heap.o ADT_Dijkstra.o ADT_create_Map.o
+
+run: all
+	path
+
+clean:
+	del *.o
+
+cleanup: clean
+	del *.exe
